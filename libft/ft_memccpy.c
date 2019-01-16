@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/25 19:18:42 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/25 19:18:46 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char *str;
+	size_t	count;
+	char	*dst1;
+	char	*src1;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	dst1 = dst;
+	src1 = (char*)src;
+	count = 0;
+	while (count < n)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		*dst1 = src1[count];
+		dst1++;
+		if (src1[count] == (char)c)
+			return (dst1);
+		count++;
+	}
+	return (0);
 }

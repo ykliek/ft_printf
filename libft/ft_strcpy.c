@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/26 14:06:02 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/26 14:06:03 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char *str;
+	int	count;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	count = 0;
+	while (src[count] != '\0')
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		dst[count] = src[count];
+		count++;
+	}
+	dst[count] = '\0';
+	return (dst);
 }

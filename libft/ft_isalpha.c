@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/29 09:54:08 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/29 09:54:10 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+int		ft_isalpha(int c)
 {
-	char *str;
-
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
-	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/11/01 12:45:39 by ykliek            #+#    #+#             */
+/*   Updated: 2018/11/01 12:45:40 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *str;
-
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	if (n < -9 || n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	if (n < 0)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		if (n >= -9)
+			ft_putchar_fd('-', fd);
+		ft_putchar_fd('0' - (n % 10), fd);
+	}
+	else
+		ft_putchar_fd('0' + (n % 10), fd);
 }

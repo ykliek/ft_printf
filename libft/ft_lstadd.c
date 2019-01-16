@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:55:14 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:55:15 by ykliek           ###   ########.fr       */
+/*   Created: 2018/11/05 20:19:02 by ykliek            #+#    #+#             */
+/*   Updated: 2018/11/05 20:19:03 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdio.h> // delete before validation
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-#endif
+void	ft_lstadd(t_list **alst, t_list *new)
+{
+	if (alst && new)
+	{
+		new->next = (*alst);
+		(*alst) = new;
+	}
+}

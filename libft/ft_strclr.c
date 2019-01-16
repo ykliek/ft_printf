@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/30 13:51:13 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/30 13:51:14 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	ft_strclr(char *s)
 {
-	char *str;
+	int		count;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	count = 0;
+	if (s)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		while (s[count] != '\0')
+		{
+			s[count] = '\0';
+			count++;
+		}
+	}
 }

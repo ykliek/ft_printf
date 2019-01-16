@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/26 15:43:09 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/26 15:43:10 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+char	*ft_strcat(char *s1, const char *s2)
 {
-	char *str;
+	int	count_1;
+	int	count_2;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	count_1 = 0;
+	count_2 = 0;
+	while (s1[count_1] != '\0')
+		count_1++;
+	while (s2[count_2] != '\0')
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		s1[count_1] = s2[count_2];
+		count_1++;
+		count_2++;
+	}
+	s1[count_1] = '\0';
+	return (s1);
 }

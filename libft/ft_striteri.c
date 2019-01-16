@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/30 14:50:41 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/30 14:50:43 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char *str;
+	unsigned int		index_1;
+	unsigned int		index_2;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	index_1 = 0;
+	index_2 = 0;
+	if (s && f != NULL)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		index_2 = ft_strlen(s);
+		while (index_1 < index_2)
+		{
+			f(index_1, s);
+			s++;
+			index_1++;
+		}
+	}
 }

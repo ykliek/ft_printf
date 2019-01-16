@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/29 14:07:55 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/29 14:07:56 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char *str;
+	char	*str;
+	int		count;
+	char	b;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	b = (char)c;
+	str = (char *)s;
+	count = 0;
+	while (count != (int)n)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
+		if (*str == b)
+			return (str);
 		str++;
-	}	
-   printf("%s\n", str);
+		count++;
+	}
+	return (NULL);
 }

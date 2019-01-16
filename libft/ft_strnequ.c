@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/11/01 14:10:16 by ykliek            #+#    #+#             */
+/*   Updated: 2018/11/01 14:10:17 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char *str;
+	int count;
+	int	count_1;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	count = 0;
+	count_1 = 0;
+	if (s1 && s2)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		while (count != (int)n)
+		{
+			if (*s1++ == *s2++)
+				count_1++;
+			else
+				return (0);
+			count++;
+		}
+	}
+	if (count_1 == (int)n)
+		return (1);
+	return (0);
 }

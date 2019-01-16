@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/30 16:29:27 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/30 16:29:28 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *str;
+	char	*str;
+	int		count;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	if (s && f)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		str = (char *)malloc(ft_strlen((char *)s) + 1);
+		if (!str)
+			return (NULL);
+		count = 0;
+		while (s[count] != '\0')
+		{
+			str[count] = f(s[count]);
+			count++;
+		}
+		str[count] = '\0';
+		return (str);
+	}
+	else
+		return (0);
 }

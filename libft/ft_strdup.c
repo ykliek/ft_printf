@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/26 13:52:55 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/26 13:52:57 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+char	*ft_strdup(const char *s1)
 {
-	char *str;
+	int		count;
+	char	*str;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	count = 0;
+	while (s1[count] != '\0')
+		count++;
+	str = (char*)malloc(count + 1);
+	if (!str)
+		return (NULL);
+	if (s1 == NULL)
+		return (NULL);
+	count -= count;
+	while (s1[count] != '\0')
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		str[count] = s1[count];
+		count++;
+	}
+	str[count] = '\0';
+	return (&str[0]);
 }

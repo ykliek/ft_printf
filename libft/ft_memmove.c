@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/29 11:09:46 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/29 11:09:48 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *str;
+	unsigned char	*dest;
+	unsigned char	*str;
+	int				count;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	dest = dst;
+	str = (unsigned char*)src;
+	count = (int)len;
+	if (dest <= str || dest >= str + count)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		while (count--)
+			*dest++ = *str++;
+	}
+	else
+	{
+		dest += count - 1;
+		str += count - 1;
+		while (count--)
+			*dest-- = *str--;
+	}
+	return (dst);
 }

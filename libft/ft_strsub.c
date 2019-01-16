@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/11/01 14:35:29 by ykliek            #+#    #+#             */
+/*   Updated: 2018/11/01 14:35:30 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char *str;
+	int		count;
+	char	*sub;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (0);
+	count = 0;
+	if (s)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		while (count < (int)len)
+		{
+			sub[count] = s[start];
+			count++;
+			start++;
+		}
+		sub[count] = '\0';
+		return (sub);
+	}
+	return (0);
 }

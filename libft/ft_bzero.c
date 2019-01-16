@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 19:32:15 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/10 19:32:16 by ykliek           ###   ########.fr       */
+/*   Created: 2018/10/25 16:59:05 by ykliek            #+#    #+#             */
+/*   Updated: 2018/10/25 16:59:07 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "printf.h"
+#include "libft.h"
 
-int main(int argc, const char * argv[])
+void	ft_bzero(void *s, size_t n)
 {
-	char *str;
+	char	*str;
+	int		num;
+	int		count;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
+	num = (int)n;
+	str = (char*)s;
+	count = 0;
+	while (count < num)
 	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+		str[count] = '\0';
+		count++;
+	}
+	s = str;
 }
