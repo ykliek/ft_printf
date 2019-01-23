@@ -1,70 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*   ft_ftoa2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 20:04:19 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/15 20:04:20 by ykliek           ###   ########.fr       */
+/*   Created: 2019/01/21 13:04:56 by ykliek            #+#    #+#             */
+/*   Updated: 2019/01/21 13:04:58 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		make_int(double n)
+int		find_count(double num)
 {
-	int count;
+	int		i;
 
-	count = 0;
-	while (count++ != 6)
-		n = n * 10;
-	count = n;
-	return (count);
-}
-
-char	*make_str(char *str, int count, int count2, int n)
-{
-	str[count] = '\0';
-	while (count--)
+	i = 0;
+	num = (num < 0) ? -num : num;
+	while ((int)num > 0)
 	{
-		if (count + 7 == count2)
-		{
-			str[count] = '.';
-			count--;
-		}
-		if (n < 0)
-		{
-			str[count] = '0' - (n % 10);
-			if (n >= -9)
-				str[0] = '-';
-		}
-		else
-			str[count] = '0' + (n % 10);
-		if (n / 10 != 0)
-			n = n / 10;
+		num = num / 10;
+		i++;
 	}
-	return (str);
+	return (i);
 }
 
-char			*ft_ftoa(double num)
+char	*ft_ftoa(double n, int tol, int count)
 {
 	char	*str;
-	int		count;
-	int		count2;
-	int		n;
-	int		tmp;
+	char	t;
+	int		i;
 
-	n = make_int(num);
-	tmp = make_int(num);
-	count = (n >= 0) ? 1 : 2;
-	while (tmp /= 10)
-		count++;
-	count++;
-	count2 = count;
-	if ((str = (char *)malloc(count + 1)) == NULL)
-		return (NULL);
-	str = make_str(str, count, count2, n);
+	i = tol + find_count(n);
+	str = ft_strnew(i + 2);
+	if (n < 0)
+	{
+		n = -n;
+		str[count++] = '-';
+	}
+	while ((int)n > 0)
+		n = n / 10;
+	n = n * 10;
+	while (i-- > 0)
+	{
+		t = '0' + (int)(n + 0.1);
+		str[count++] = t;
+		if (i == tol)
+			str[count++] = '.';
+		n = n - (double)(t - '0');
+		n *= 10;
+	}
+	str[count] = '\0';
 	return (str);
 }
-

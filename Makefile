@@ -18,8 +18,8 @@ SRCS = main.c \
 		ft_printf.c \
 		parser.c \
 		ft_itoa_base.c \
-		ft_ftoa.c\
-		precision.c
+		ft_ftoa.c \
+		precision.c 
 
 HEADER = printf.h
 

@@ -15,15 +15,8 @@
 
 int main(int argc, const char * argv[])
 {
-	char *str;
+	double t;
 
-	str = (char *)malloc(7);
-	str = "qwrqret";
-	while (str)
-	{
-		if(*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
-	}	
-   printf("%s\n", str);
+	t = 8;
+	printf("%.100f", 123.34534);
 }

@@ -27,16 +27,16 @@ char	*ft_itoa_base(int value, int base, char type);
 
 char 	*str_toupper(char *str);
 
-char	*ft_ftoa(double num);
-
 char 	*precision(int	start, int end, char *str, char *str2);
 
 void		test(int count, char *str, va_list argptr);
 
 char	*precision_diouxX(int num, char *str);
 
-char		*find_type(char type, va_list argptr);
+char		*find_type(char type, va_list argptr, int tol);
 
-char	*precision_f(int num, char *str);
+int		precision_f(int	start, int end, char *str);
+
+char	*ft_ftoa(double n, int tol, int count);
 
 #endif

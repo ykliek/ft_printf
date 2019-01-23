@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 15:04:36 by ykliek            #+#    #+#             */
-/*   Updated: 2019/01/11 15:04:36 by ykliek           ###   ########.fr       */
+/*   Created: 2019/01/18 16:39:07 by ykliek            #+#    #+#             */
+/*   Updated: 2019/01/18 16:39:22 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-int		main()
+int		find_weigth(char *str, int start, int end)
 {
-	int b;
-
-	b = 234;
-
-	ft_printf("WEDWE%.9fWEDWEDqwe%.4dqwe%swerw%cqwdqd\n", 123.23, 23, "YURA", 'A');
-	//printf("%.1f\n", 123.35765114522151656);
-	//printf("%s\n", ft_ftoa2(-12.345, 5, 0));
-	//printf("%-6d\n", 24);
-	//printf("%s\n", ft_ftoa(-12.2254, 7, 0));
-	double a;
-
-	a = 10;
-	printf("%f\n", a / 10);
-	return (0);
+	
 }

@@ -12,27 +12,29 @@
 
 #include "printf.h"
 
-void		test(int count, char *str, va_list argptr)
+int		print(int count, char *str, va_list argptr)
 {
-	char 	*str1;
 	char 	*str2;
 	int		tmp;
 
 	tmp = count;
-	str1 = ft_strnew(8);
-	str1 = "cspfdiouxX";
 	while (str[count] != '\0')
 	{
-		if (ft_strchr(str1, str[count]) != NULL)
+		if (ft_strchr("cspfdiouxX", str[count]) != NULL)
 		{
-			str2 = find_type(str[count], argptr);
-			precision(tmp, count, str, str2);
+			if (str[count] == 'f')
+				str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
+			else
+				str2 = find_type(str[count], argptr, 6);
+			ft_putstr(precision(tmp, count, str, str2));
+			break ;
 		}
 		count++;
 	}
+	return (count - tmp);
 }
 
-char		*find_type(char type, va_list argptr)
+char		*find_type(char type, va_list argptr, int tol)
 {
 	char	*str;
 
@@ -49,7 +51,7 @@ char		*find_type(char type, va_list argptr)
 	if (type == 'x' || type == 'X')
 		str = ft_itoa_base(va_arg(argptr, int), 16, type);
 	if (type == 'f')
-		str = ft_ftoa(va_arg(argptr, double));
+		str = ft_ftoa(va_arg(argptr, double), tol, 0);
 	return (str);
 }
 
@@ -58,6 +60,7 @@ char		*find_type(char type, va_list argptr)
 int		ft_printf(const char *format, ...)
 {
 	int		count;
+	int		end;
 	va_list	argptr;
 
 	count = 0;
@@ -73,8 +76,8 @@ int		ft_printf(const char *format, ...)
 			write(1, &format[count], 1);
 		if (format[count] == '%')
 		{
-			test(count, (char *)format, argptr);
-			count++;
+			end = print(count, (char *)format, argptr);
+			count += end;
 		}
 		count++;
 	}

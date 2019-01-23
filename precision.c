@@ -35,13 +35,12 @@ char 	*precision(int	start, int end, char *str, char *str2)
 				str1[count++] = str[start++];
 			str1[count] = '\0';
 			if (str[end] == 'f')
-				str2 = precision_f(ft_atoi(str1), str2);
+				return (str2);
 			else
 				str2 = precision_diouxX(ft_atoi(str1), str2);
 		}
 		start++;
 	}
-	printf("%s\n", str2);
 	return (str2);
 }
 
@@ -67,26 +66,30 @@ char	*precision_diouxX(int num, char *str)
 	return (str);
 }
 
-char	*precision_f(int num, char *str)
+int		precision_f(int	start, int end, char *str)
 {
+	char 	*str1;
+	int		tmp;
 	int		count;
-	int		count2;
-	int 	length;
-	char	*str1;
 
-	count2 = 0;
-	length = 0;
-	while (str[length] != '.')
-		length++;
-	if ((int)ft_strlen(str) - length < num)
+	count = 0;
+	while (start <= end)
 	{
-		count = num - (ft_strlen(str) - length) + 1;
-		str1 = (char *)malloc(count + 1);
-		while (count2 != count)
-			str1[count2++] = '0';
-		str1[count2] = '\0';
-		str1 = ft_strjoin(str, str1);
-		return (str1);
+		if (str[start - 1] == '.')
+		{
+			tmp = start;
+			while (str[tmp] >= 48 && str[tmp] <= 57)
+			{
+				count++;
+				tmp++;
+			}
+			str1 = (char *)malloc(count + 1);
+			count = 0;
+			while(str[start] >= 49 && str[start] <= 57)
+				str1[count++] = str[start++];
+			return (ft_atoi(str1));
+		}
+		start++;
 	}
-	return (str);
+	return (6);
 }
