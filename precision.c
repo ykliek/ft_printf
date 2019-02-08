@@ -31,17 +31,13 @@ char 	*precision(int	start, int end, char *str, char *str2)
 			}
 			str1 = (char *)malloc(count + 1);
 			count = 0;
-			while(str[start] >= 49 && str[start] <= 57)
+			while(str[start] >= 48 && str[start] <= 57)
 				str1[count++] = str[start++];
 			str1[count] = '\0';
-			if (str[end] == 'f')
-				return (str2);
-			else
-				str2 = precision_diouxX(ft_atoi(str1), str2);
 		}
 		start++;
 	}
-	return (str2);
+	return (precision_diouxX(ft_atoi(str1), str2));
 }
 
 char	*precision_diouxX(int num, char *str)
@@ -50,9 +46,7 @@ char	*precision_diouxX(int num, char *str)
 	int		count2;
 	char	*str1;
 
-	count = 0;
 	count2 = 0;
-
 	if ((int)ft_strlen(str) < num)
 	{
 		count = num - ft_strlen(str);
@@ -85,8 +79,9 @@ int		precision_f(int	start, int end, char *str)
 			}
 			str1 = (char *)malloc(count + 1);
 			count = 0;
-			while(str[start] >= 49 && str[start] <= 57)
+			while(str[start] >= 48 && str[start] <= 57)
 				str1[count++] = str[start++];
+			str1[count] = '\0';
 			return (ft_atoi(str1));
 		}
 		start++;

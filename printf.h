@@ -17,6 +17,11 @@
 # include <stdarg.h>
 # include "./libft/libft.h"
 
+typedef struct      s_flags
+{
+
+}                   t_flags;
+
 int		ft_printf(const char *format, ...);
 
 char	*parse_char(char c);
@@ -29,14 +34,14 @@ char 	*str_toupper(char *str);
 
 char 	*precision(int	start, int end, char *str, char *str2);
 
-void		test(int count, char *str, va_list argptr);
-
 char	*precision_diouxX(int num, char *str);
 
 char		*find_type(char type, va_list argptr, int tol);
 
 int		precision_f(int	start, int end, char *str);
 
-char	*ft_ftoa(double n, int tol, int count);
+char	*ft_ftoa(long double n, int tol, int count);
+
+char        *modifiers(int start, int end, char *str, va_list argptr);
 
 #endif

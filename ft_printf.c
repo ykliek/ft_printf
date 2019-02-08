@@ -18,19 +18,15 @@ int		print(int count, char *str, va_list argptr)
 	int		tmp;
 
 	tmp = count;
-	while (str[count] != '\0')
-	{
-		if (ft_strchr("cspfdiouxX", str[count]) != NULL)
-		{
-			if (str[count] == 'f')
-				str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
-			else
-				str2 = find_type(str[count], argptr, 6);
-			ft_putstr(precision(tmp, count, str, str2));
-			break ;
-		}
+	while (ft_strchr("cspfdiouxX", str[count]) == NULL)
 		count++;
-	}
+	if (str[count - 1] < 65 || str[count - 1] > 122)
+		str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
+	else
+		str2 = modifiers(tmp, count, str, argptr);
+	if (str[count] != 'f')
+		str2 = precision(tmp, count, str, str2);
+	ft_putstr(str2);
 	return (count - tmp);
 }
 
@@ -41,7 +37,7 @@ char		*find_type(char type, va_list argptr, int tol)
 	if (type == 'd' || type == 'i')
 		str = ft_itoa(va_arg(argptr, int));
 	if (type == 'c')
-		str = parse_char(va_arg(argptr, int));
+		str = parse_char(va_arg(argptr, char));
 	if (type == 's')
 		str = va_arg(argptr, char *);
 	if (type == 'p')

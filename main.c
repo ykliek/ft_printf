@@ -18,14 +18,12 @@ int		main()
 
 	b = 234;
 
-	ft_printf("WEDWE%.9fWEDWEDqwe%.4dqwe%swerw%cqwdqd\n", 123.23, 23, "YURA", 'A');
-	//printf("%.1f\n", 123.35765114522151656);
+	ft_printf("%.20f\n", 584.234);
+	printf("%.20f\n", 584.234);
+//	printf("%.20f\n", 584.287);
+	//printf("%.1f\n", 12335765114522151656444444444.4);
 	//printf("%s\n", ft_ftoa2(-12.345, 5, 0));
 	//printf("%-6d\n", 24);
 	//printf("%s\n", ft_ftoa(-12.2254, 7, 0));
-	double a;
-
-	a = 10;
-	printf("%f\n", a / 10);
 	return (0);
 }

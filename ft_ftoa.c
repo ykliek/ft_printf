@@ -26,31 +26,33 @@ int		find_count(double num)
 	return (i);
 }
 
-char	*ft_ftoa(double n, int tol, int count)
-{
+ char	*ft_ftoa(long double n, int tol, int count)
+ {
 	char	*str;
-	char	t;
-	int		i;
+ 	char	t;
+ 	long double     tmp;
 
-	i = tol + find_count(n);
-	str = ft_strnew(i + 2);
-	if (n < 0)
-	{
-		n = -n;
-		str[count++] = '-';
-	}
-	while ((int)n > 0)
-		n = n / 10;
-	n = n * 10;
-	while (i-- > 0)
-	{
-		t = '0' + (int)(n + 0.1);
-		str[count++] = t;
-		if (i == tol)
-			str[count++] = '.';
-		n = n - (double)(t - '0');
-		n *= 10;
-	}
-	str[count] = '\0';
-	return (str);
-}
+ 	tmp = n;
+ 	if (n < 0)
+ 	{
+ 		str = ft_strnew(tol + 2);
+ 		n = -n;
+ 		str[count++] = '-';
+ 	}
+ 	else
+	    str = ft_strnew(tol + find_count(n) + 1);
+ 	str = ft_strjoin(ft_itoa((int)n), str);
+ 	n = n - (int)n;
+ 	count = count + find_count(tmp);
+ 	n = n * 10;
+ 	str[count++] = '.';
+ 	while (tol-- > 0)
+ 	{
+ 		t = '0' + (int)n;
+ 		str[count++] = t;
+ 		n = n - (double)(t - '0');
+ 		n *= 10;
+ 	}
+ 	str[count] = '\0';
+ 	return (str);
+ }
