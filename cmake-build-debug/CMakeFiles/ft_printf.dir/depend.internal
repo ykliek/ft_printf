@@ -188,6 +188,7 @@ CMakeFiles/ft_printf.dir/libft/ft_toupper.c.o
  /home/yura/Desktop/ft_printf_test/libft/ft_toupper.c
  /home/yura/Desktop/ft_printf_test/libft/libft.h
 CMakeFiles/ft_printf.dir/main.c.o
+<<<<<<< Updated upstream
  /home/yura/Desktop/ft_printf_test/./libft/libft.h
  /home/yura/Desktop/ft_printf_test/main.c
  /home/yura/Desktop/ft_printf_test/printf.h
@@ -195,6 +196,15 @@ CMakeFiles/ft_printf.dir/modifiers.c.o
  /home/yura/Desktop/ft_printf_test/./libft/libft.h
  /home/yura/Desktop/ft_printf_test/modifiers.c
  /home/yura/Desktop/ft_printf_test/printf.h
+=======
+ /Users/ykliek/Desktop/ft_printf/./libft/libft.h
+ /Users/ykliek/Desktop/ft_printf/main.c
+ /Users/ykliek/Desktop/ft_printf/printf.h
+CMakeFiles/ft_printf.dir/modifiers.c.o
+ /Users/ykliek/Desktop/ft_printf/./libft/libft.h
+ /Users/ykliek/Desktop/ft_printf/modifiers.c
+ /Users/ykliek/Desktop/ft_printf/printf.h
+>>>>>>> Stashed changes
 CMakeFiles/ft_printf.dir/parser.c.o
  /home/yura/Desktop/ft_printf_test/./libft/libft.h
  /home/yura/Desktop/ft_printf_test/parser.c

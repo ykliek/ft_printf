@@ -12,10 +12,23 @@ unistd.h
 stdlib.h
 -
 
+<<<<<<< Updated upstream
 /home/yura/Desktop/ft_printf_test/ft_ftoa.c
+=======
+/Users/ykliek/Desktop/ft_printf/ft_ftoa.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/ft_itoa_base.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/ft_printf.c
+>>>>>>> Stashed changes
 printf.h
 /home/yura/Desktop/ft_printf_test/printf.h
 
+<<<<<<< Updated upstream
 /home/yura/Desktop/ft_printf_test/ft_itoa_base.c
 printf.h
 /home/yura/Desktop/ft_printf_test/printf.h
@@ -279,6 +292,25 @@ printf.h
 /home/yura/Desktop/ft_printf_test/printf.h
 
 /home/yura/Desktop/ft_printf_test/printf.h
+=======
+/Users/ykliek/Desktop/ft_printf/main.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/modifiers.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/parser.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/precision.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/printf.h
+>>>>>>> Stashed changes
 stdio.h
 -
 stdarg.h

@@ -31,7 +31,7 @@ NAME = a.out
 all : $(NAME)
 
 $(NAME):
-	$(CC) $(CFLSGS) $(SRCS) $(HEADER) $(LIB)
+	$(CC) $(CFLSGS) $(SRCS) $(HEADER) $(LIB) 
 
 clean:
 	rm -f fillit.h.gch
