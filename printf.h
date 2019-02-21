@@ -44,4 +44,6 @@ char	*ft_ftoa(long double n, int tol, int count);
 
 char        *modifiers(int start, int end, char *str, va_list argptr);
 
+char       *make_weigth(char *str, int start, int end, char *res);
+
 #endif

@@ -26,6 +26,7 @@ int		print(int count, char *str, va_list argptr)
 		str2 = modifiers(tmp, count, str, argptr);
 	if (str[count] != 'f')
 		str2 = precision(tmp, count, str, str2);
+	str2 = make_weigth(str,tmp, count, str2);
 	ft_putstr(str2);
 	return (count - tmp);
 }
@@ -37,7 +38,7 @@ char		*find_type(char type, va_list argptr, int tol)
 	if (type == 'd' || type == 'i')
 		str = ft_itoa(va_arg(argptr, int));
 	if (type == 'c')
-		str = parse_char(va_arg(argptr, char));
+		str = parse_char(va_arg(argptr, int));
 	if (type == 's')
 		str = va_arg(argptr, char *);
 	if (type == 'p')

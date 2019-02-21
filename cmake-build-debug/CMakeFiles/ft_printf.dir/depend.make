@@ -191,6 +191,10 @@ CMakeFiles/ft_printf.dir/main.c.o: .././libft/libft.h
 CMakeFiles/ft_printf.dir/main.c.o: ../main.c
 CMakeFiles/ft_printf.dir/main.c.o: ../printf.h
 
+CMakeFiles/ft_printf.dir/modifiers.c.o: .././libft/libft.h
+CMakeFiles/ft_printf.dir/modifiers.c.o: ../modifiers.c
+CMakeFiles/ft_printf.dir/modifiers.c.o: ../printf.h
+
 CMakeFiles/ft_printf.dir/parser.c.o: .././libft/libft.h
 CMakeFiles/ft_printf.dir/parser.c.o: ../parser.c
 CMakeFiles/ft_printf.dir/parser.c.o: ../printf.h

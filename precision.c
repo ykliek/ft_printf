@@ -37,7 +37,9 @@ char 	*precision(int	start, int end, char *str, char *str2)
 		}
 		start++;
 	}
-	return (precision_diouxX(ft_atoi(str1), str2));
+	if (count != 0)
+	    return (precision_diouxX(ft_atoi(str1), str2));
+	return (precision_diouxX(0, str2));
 }
 
 char	*precision_diouxX(int num, char *str)

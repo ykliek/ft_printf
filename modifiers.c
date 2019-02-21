@@ -18,21 +18,21 @@ char    *make_mode_dio(char *str, va_list argptr, char type, int tol)
 
 	if (str == NULL)
 		res = find_type(type, argptr, tol);
-	else if ((type == 'd' || type == 'i') && ft_strcmp(str, "hh") == 0)
-		res = va_arg(argptr, char *);
-	else if ((type == 'd' || type == 'i') && ft_strcmp(str, "h") == 0)
-		res = ft_itoa(va_arg(argptr, unsigned short int));
-	else if ((type == 'd' || type == 'i') && ft_strcmp(str, "l") == 0)
+	else if ((type == 'd' && ft_strcmp(str, "hh") == 0) || (type == 'i' && ft_strcmp(str, "hh") == 0))
+		res = ft_itoa(va_arg(argptr, int));
+    else if((type == 'd' && ft_strcmp(str, "h") == 0) || (type == 'i' && ft_strcmp(str, "h") == 0))
+		res = ft_itoa(va_arg(argptr, unsigned int));
+    else if ((type == 'd' && ft_strcmp(str, "l") == 0) || (type == 'i' && ft_strcmp(str, "l") == 0))
 		res = ft_itoa(va_arg(argptr, unsigned long int));
-	else if ((type == 'd' || type == 'i') && ft_strcmp(str, "ll") == 0)
+    else if ((type == 'd' && ft_strcmp(str, "ll") == 0) || (type == 'i' && ft_strcmp(str, "ll") == 0))
 		res = ft_itoa(va_arg(argptr, unsigned long long int));
 	else if (type == 'o' && ft_strcmp(str, "hh") == 0)
 		res = ft_itoa_base(ft_atoi(va_arg(argptr, char*)), 8, type);
 	else if (type == 'o' && ft_strcmp(str, "h"))
-		res = ft_itoa_base(va_arg(argptr, unsigned short int), 8, type);
+		res = ft_itoa_base(va_arg(argptr, unsigned int), 8, type);
 	else if (type == 'o' && ft_strcmp(str, "l") == 0)
 		res = ft_itoa_base(va_arg(argptr, unsigned long int), 8, type);
-	else if (type == 'o' && ft_strcmp(str, "ll") == 0)
+	else
 		res = ft_itoa_base(va_arg(argptr, unsigned long long int), 8, type);
 	return (res);
 }
@@ -43,15 +43,15 @@ char    *make_mode_uxXf(char *str, va_list argptr, char type, int tol)
 
 	if (str == NULL)
 		res = find_type(type, argptr, tol);
-	else if ((type == 'x' || type == 'X') && ft_strcmp(str, "hh") == 0)
+    else if ((type == 'x' && ft_strcmp(str, "hh") == 0) || (type == 'X' && ft_strcmp(str, "hh") == 0))
 		res = ft_itoa_base(ft_atoi(va_arg(argptr, char*)), 16, type);
-	else if ((type == 'x' || type == 'X') && ft_strcmp(str, "h") == 0)
-		res = ft_itoa_base(va_arg(argptr, unsigned short int), 16, type);
-	else if ((type == 'x' || type == 'X') && ft_strcmp(str, "l") == 0)
+    else if ((type == 'x' && ft_strcmp(str, "h") == 0) || (type == 'X' && ft_strcmp(str, "h") == 0))
+		res = ft_itoa_base(va_arg(argptr, unsigned int), 16, type);
+    else if ((type == 'x' && ft_strcmp(str, "l") == 0) || (type == 'X' && ft_strcmp(str, "l") == 0))
 		res = ft_itoa_base(va_arg(argptr, unsigned long int), 16, type);
-	else if ((type == 'x' || type == 'X') && ft_strcmp(str, "ll") == 0)
+    else if ((type == 'x' && ft_strcmp(str, "ll") == 0) || (type == 'X' && ft_strcmp(str, "ll") == 0))
 		res = ft_itoa_base(va_arg(argptr, unsigned long long int), 16, type);
-	else if ((ft_strcmp(str, "l") == 0 || ft_strcmp(str, "L") == 0) && type == 'f')
+	else
 		res = ft_ftoa(va_arg(argptr, long double), tol, 0);
 	return (res);
 }
