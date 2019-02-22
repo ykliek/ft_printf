@@ -20,7 +20,8 @@ SRCS = main.c \
 		ft_itoa_base.c \
 		ft_ftoa.c \
 		precision.c \
-		modifiers.c
+		modifiers.c \
+		tools.c
 
 HEADER = printf.h
 
