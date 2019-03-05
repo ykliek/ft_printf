@@ -61,10 +61,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/ft_itoa_base.c.o"
   "CMakeFiles/ft_printf.dir/ft_printf.c.o"
   "CMakeFiles/ft_printf.dir/main.c.o"
+  "CMakeFiles/ft_printf.dir/modifiers.c.o"
   "CMakeFiles/ft_printf.dir/parser.c.o"
   "CMakeFiles/ft_printf.dir/precision.c.o"
   "CMakeFiles/ft_printf.dir/tools.c.o"
-  "CMakeFiles/ft_printf.dir/modifiers.c.o"
   "ft_printf.pdb"
   "ft_printf"
 )

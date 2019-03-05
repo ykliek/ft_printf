@@ -16,25 +16,43 @@ int		print(int count, char *str, va_list argptr)
 {
 	char 	*str2;
 	int		tmp;
+	int 	i;
 
 	tmp = count;
-	while (ft_strchr("cspfdiouxX", str[count]) == NULL)
+	i = count + 1;
+	if (ft_strchr("cspfdiouxX", str[count + 1]) == NULL)
+	{	
 		count++;
+		while (ft_strchr("cspfdiouxX%", str[count]) == NULL)
+			count++;
+	}
+	else
+		while (ft_strchr("cspfdiouxX", str[count]) == NULL)
+			count++;
 	if (str[count - 1] < 65 || str[count - 1] > 122)
 		str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
 	else
 		str2 = modifiers(tmp, count, str, argptr);
 	if (str[count] != 'f')
 		str2 = precision(tmp, count, str, str2);
-	str2 = make_weigth(str,tmp, count, str2);
+	str2 = make_weigth(str, tmp, count, str2);
 	ft_putstr(str2);
+	free(str2);
 	return (count - tmp);
 }
 
 char		*find_type(char type, va_list argptr, int tol)
 {
 	char	*str;
-
+	int 	a;
+	str = ft_strnew(1);
+	if (type == 'u')
+	{
+		a = va_arg(argptr, unsigned int);
+		str = ft_itoa(CHECKM(a) + a);
+	}
+	if (type == '%')
+		str = "%";
 	if (type == 'd' || type == 'i')
 		str = ft_itoa(va_arg(argptr, int));
 	if (type == 'c')

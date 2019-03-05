@@ -37,7 +37,7 @@ int				ft_isdigit(int c);
 
 int				ft_isprint(int c);
 
-char			*ft_itoa(int n);
+char			*ft_itoa(long long n);
 
 void			*ft_memalloc(size_t size);
 

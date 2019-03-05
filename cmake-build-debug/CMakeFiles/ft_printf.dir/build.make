@@ -863,9 +863,22 @@ CMakeFiles/ft_printf.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ykliek/Desktop/ft_printf/main.c -o CMakeFiles/ft_printf.dir/main.c.s
 
+CMakeFiles/ft_printf.dir/modifiers.c.o: CMakeFiles/ft_printf.dir/flags.make
+CMakeFiles/ft_printf.dir/modifiers.c.o: ../modifiers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/ft_printf.dir/modifiers.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/modifiers.c.o   -c /Users/ykliek/Desktop/ft_printf/modifiers.c
+
+CMakeFiles/ft_printf.dir/modifiers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/modifiers.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ykliek/Desktop/ft_printf/modifiers.c > CMakeFiles/ft_printf.dir/modifiers.c.i
+
+CMakeFiles/ft_printf.dir/modifiers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/modifiers.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ykliek/Desktop/ft_printf/modifiers.c -o CMakeFiles/ft_printf.dir/modifiers.c.s
+
 CMakeFiles/ft_printf.dir/parser.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/parser.c.o: ../parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/ft_printf.dir/parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/ft_printf.dir/parser.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/parser.c.o   -c /Users/ykliek/Desktop/ft_printf/parser.c
 
 CMakeFiles/ft_printf.dir/parser.c.i: cmake_force
@@ -878,7 +891,7 @@ CMakeFiles/ft_printf.dir/parser.c.s: cmake_force
 
 CMakeFiles/ft_printf.dir/precision.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/precision.c.o: ../precision.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/ft_printf.dir/precision.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/ft_printf.dir/precision.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/precision.c.o   -c /Users/ykliek/Desktop/ft_printf/precision.c
 
 CMakeFiles/ft_printf.dir/precision.c.i: cmake_force
@@ -891,7 +904,7 @@ CMakeFiles/ft_printf.dir/precision.c.s: cmake_force
 
 CMakeFiles/ft_printf.dir/tools.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/tools.c.o: ../tools.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/ft_printf.dir/tools.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/ft_printf.dir/tools.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/tools.c.o   -c /Users/ykliek/Desktop/ft_printf/tools.c
 
 CMakeFiles/ft_printf.dir/tools.c.i: cmake_force
@@ -901,19 +914,6 @@ CMakeFiles/ft_printf.dir/tools.c.i: cmake_force
 CMakeFiles/ft_printf.dir/tools.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/tools.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ykliek/Desktop/ft_printf/tools.c -o CMakeFiles/ft_printf.dir/tools.c.s
-
-CMakeFiles/ft_printf.dir/modifiers.c.o: CMakeFiles/ft_printf.dir/flags.make
-CMakeFiles/ft_printf.dir/modifiers.c.o: ../modifiers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/ft_printf.dir/modifiers.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/modifiers.c.o   -c /Users/ykliek/Desktop/ft_printf/modifiers.c
-
-CMakeFiles/ft_printf.dir/modifiers.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/modifiers.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ykliek/Desktop/ft_printf/modifiers.c > CMakeFiles/ft_printf.dir/modifiers.c.i
-
-CMakeFiles/ft_printf.dir/modifiers.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/modifiers.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ykliek/Desktop/ft_printf/modifiers.c -o CMakeFiles/ft_printf.dir/modifiers.c.s
 
 # Object files for target ft_printf
 ft_printf_OBJECTS = \
@@ -979,10 +979,10 @@ ft_printf_OBJECTS = \
 "CMakeFiles/ft_printf.dir/ft_itoa_base.c.o" \
 "CMakeFiles/ft_printf.dir/ft_printf.c.o" \
 "CMakeFiles/ft_printf.dir/main.c.o" \
+"CMakeFiles/ft_printf.dir/modifiers.c.o" \
 "CMakeFiles/ft_printf.dir/parser.c.o" \
 "CMakeFiles/ft_printf.dir/precision.c.o" \
-"CMakeFiles/ft_printf.dir/tools.c.o" \
-"CMakeFiles/ft_printf.dir/modifiers.c.o"
+"CMakeFiles/ft_printf.dir/tools.c.o"
 
 # External object files for target ft_printf
 ft_printf_EXTERNAL_OBJECTS =
@@ -1049,10 +1049,10 @@ ft_printf: CMakeFiles/ft_printf.dir/ft_ftoa.c.o
 ft_printf: CMakeFiles/ft_printf.dir/ft_itoa_base.c.o
 ft_printf: CMakeFiles/ft_printf.dir/ft_printf.c.o
 ft_printf: CMakeFiles/ft_printf.dir/main.c.o
+ft_printf: CMakeFiles/ft_printf.dir/modifiers.c.o
 ft_printf: CMakeFiles/ft_printf.dir/parser.c.o
 ft_printf: CMakeFiles/ft_printf.dir/precision.c.o
 ft_printf: CMakeFiles/ft_printf.dir/tools.c.o
-ft_printf: CMakeFiles/ft_printf.dir/modifiers.c.o
 ft_printf: CMakeFiles/ft_printf.dir/build.make
 ft_printf: CMakeFiles/ft_printf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ykliek/Desktop/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Linking C executable ft_printf"

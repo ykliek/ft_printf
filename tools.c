@@ -12,46 +12,51 @@
 
 #include "printf.h"
 
+char 		*conditions(char *str, int end, char *res)
+{
+	if (ft_strchr(str, '+'))
+		if (ft_atoi(res) > 0 && str[end] == 'd')
+			res = ft_strjoin("+", res);
+	if (ft_strchr(str, '#'))
+	{
+		if (str[end] == 'x' || str[end] == 'X')
+			res = ft_strjoin(TEG(str, end), res);
+		if (str[end] == 'o')
+			res = ft_strjoin("0", res);
+	}
+	return (res);
+}
+
 char		*make_weigth(char *str, int start, int end, char *res)
 {
 	char	*str1;
 	char	*null;
 	char	*zero;
-	int		tmp;
 
-	tmp = start;
-	flag = ft_strnew(1);
-	while (start != end)
-	{
+	str1 = ft_strnew(1);
+	while (start++ != end)
 		if (str[start] > 48 && str[start] <= 57 && str[start - 1] != '.')
 			str1 = parse_char(str[start]);
-		start++;
-	}
-	if (str1 == NULL)
-		return (res);
 	null = ft_strnew(ft_atoi(str1));
 	zero = ft_strnew(ft_atoi(str1));
 	start = 0;
-	while (start != ft_atoi(str1))
-		null[start] = ' ';
-	while (start != ft_atoi(str1))
-		zero[start] = '0';
-	if (ft_strchr(str, '+') != NULL)
-		if (ft_atoi(res) > 0 && str[end] == 'd')
-			res = ft_strjoin(res, '+');
-	else if (ft_strchr(str, ' '))
-		if (ft_atoi(res) > 0 && str[end] == 'd')
-			res = ft_strjoin(res, ' ');
-	if (ft_strchr(str, '-') != NULL)
-		res = ft_strjoin(null, res);
-	else if (ft_strchr(str, '0'))
+	res = conditions(str, end, res);
+	if (str1 != NULL && ft_strlen(str1) != 0)
+	{
+		while (start != DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str))
+			null[start++] = ' ';
+		start = 0;
+		while (start != DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str))
+			zero[start++] = '0';
+	}	
+	if (ft_strchr(str, '-'))
+		res = ft_strjoin(res, null);
+	else if (ft_strchr(str, '0') && !ft_strchr(str, '.'))
 		res = ft_strjoin(zero, res);
 	else
-		res = ft_strjoin(res, null);
-}
-
-char 		*make_flags(char *res, char *flag)
-{
-
+		res = ft_strjoin(null, res);
+	if (ft_strchr(str, ' ') && !ft_strchr(str, '+'))
+		if (ft_atoi(res) > 0 && str[end] == 'd')
+			res = ft_strjoin(" ", res);
 	return (res);
 }

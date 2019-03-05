@@ -16,6 +16,7 @@ char    *make_mode_dio(char *str, va_list argptr, char type, int tol)
 {
 	char    *res;
 
+	res = ft_strnew(1);
 	if (str == NULL)
 		res = find_type(type, argptr, tol);
 	else if ((type == 'd' && ft_strcmp(str, "hh") == 0) || (type == 'i' && ft_strcmp(str, "hh") == 0))
@@ -41,6 +42,7 @@ char    *make_mode_uxXf(char *str, va_list argptr, char type, int tol)
 {
 	char    *res;
 
+	res = ft_strnew(1);
 	if (str == NULL)
 		res = find_type(type, argptr, tol);
     else if ((type == 'x' && ft_strcmp(str, "hh") == 0) || (type == 'X' && ft_strcmp(str, "hh") == 0))
@@ -62,6 +64,7 @@ char        *modifiers(int start, int end, char *str, va_list argptr)
 	char    str1[3];
 	int     count;
 
+	res = ft_strnew(1);
 	count = 0;
 	while(str[start] != str[end])
 	{

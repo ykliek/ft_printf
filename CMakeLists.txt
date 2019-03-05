@@ -70,8 +70,8 @@ add_executable(ft_printf
         ft_itoa_base.c
         ft_printf.c
         main.c
+        modifiers.c
         parser.c
         precision.c
         printf.h
-        tools.c
-        modifiers.c)
+        tools.c)

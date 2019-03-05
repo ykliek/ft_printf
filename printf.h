@@ -12,17 +12,16 @@
 
 #ifndef PRINTF_H
 # define PRINTF_H
+# define DIFF(x, y) ((x > y) ? x - y : 0)
+# define TEST(str) ((ft_strchr(str, ' ') && !ft_strchr(str, '+')) ? 1 : 0)
+# define TEG(str, end) ((str[end] == 'x') ? "0x" : "0X")
+# define CHECKM(a) ((a < 0) ? 4294967296 : 0)
 
-# include <stdio.h> // delete before validation
+# include <stdio.h> // delete before pushing
 # include <stdarg.h>
 # include "./libft/libft.h"
 
-typedef struct      s_flags
-{
-
-}                   t_flags;
-
-int		ft_printf(const char *format, ...);
+int			ft_printf(const char *format, ...);
 
 char	*parse_char(char c);
 
