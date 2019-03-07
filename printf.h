@@ -45,4 +45,6 @@ char        *modifiers(int start, int end, char *str, va_list argptr);
 
 char       *make_weigth(char *str, int start, int end, char *res);
 
+int		str_s(char *str, int start, int end, char c);
+
 #endif

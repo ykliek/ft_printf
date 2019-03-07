@@ -170,8 +170,11 @@ all : $(NAME)
 # 	$(CC) $(CFLSGS) $(SRCS) $(HEADER)
 # 	ar rc $(NAME) $(OBJ)
 
+#$(NAME):
+#	$(CC) $(CFLSGS) $(SRCS) $(HEADER) $(LIB)
+
 $(NAME):
-	$(CC) $(CFLSGS) $(SRCS) $(HEADER) $(LIB)
+	$(CC) $(SRCS) $(HEADER) $(LIB)
 
 clean:
 	rm -f $(OBJ)
@@ -182,4 +185,4 @@ fclean: clean
 re: fclean all
 
 ev:
-	make re ; clear ; ./a.out
+	make re ; clear ; ./a.out | cat -e

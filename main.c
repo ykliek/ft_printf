@@ -14,69 +14,11 @@
 
 int		main()
 {
-
-//    ft_printf("%005%");
-//	ft_printf("\n");
-//	ft_printf("%");
-//	ft_printf("\n");
-	// printf("%%\n");
-	ft_printf("%5%");
-	printf("%5%");
-	//printf("%u\n", -34);
-	//printf("%ld\n", 4294967295);
-//	ft_printf("% h");
-//	ft_printf("\n");
-//	ft_printf("%Z");
-//	ft_printf("\n");
-//	ft_printf("% hZ");
-//	ft_printf("\n");
-//	ft_printf("%05%");
-//	ft_printf("\n");
-//	ft_printf("%-05%");
-//	ft_printf("\n");
-//	ft_printf("% hZ%");
-//	ft_printf("\n");
-//	ft_printf("% Z", "test");
-//	ft_printf("\n");
-//	ft_printf("% Z ", "test");
-//	ft_printf("\n");
-//	ft_printf("% Z%s", "test");
-//	ft_printf("\n");
-//	ft_printf("%000   %", "test");
-//	ft_printf("\n");
-//	ft_printf("%%%", "test");
-//	ft_printf("\n");
-//	ft_printf("%%   %", "test");
-//	ft_printf("\n");
-//	ft_printf("%ll#x", 9223372036854775807);
-//	ft_printf("\n");
-//	ft_printf("%010s is a string", "this");
-//	ft_printf("\n");
-//	ft_printf("%-010s is a string", "this");
-//	ft_printf("\n");
-//	ft_printf("%05c", 42);
-//	ft_printf("\n");
-//	ft_printf("% Z", 42);
-//	ft_printf("\n");
-//	ft_printf("%0 d", 42);
-//	ft_printf("\n");
-//	ft_printf("%0 d", -42);
-//	ft_printf("\n");
-//	ft_printf("% 0d", 42);
-//	ft_printf("\n");
-//	ft_printf("% 0d", -42);
-//	ft_printf("\n");
-//	ft_printf("%5+d", 42);
-//	ft_printf("\n");
-//	ft_printf("%5+d", -42);
-//    printf("%005%");
-//	ft_printf("\n");
-//	printf("%.20f\n", 584.287);
-	//printf("%.1f\n", 12335765114522151656444444444.4);
-	//printf("%s\n", ft_ftoa2(-12.345, 5, 0));
-	//printf("%-6d\n", 24);
-	//printf("%s\n", ft_ftoa(-12.2254, 7, 0));
-	//system ("leaks a.out");
+	ft_printf("% d\n", 5);
+//	printf("% d\n", 5);
+//	printf("%");
+//	printf("%wetwedw\n");
+	system("leaks a.out");
 	return (0);
 }
 

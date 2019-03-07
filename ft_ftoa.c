@@ -23,14 +23,14 @@ int		find_count(double num)
 		num = num / 10;
 		i++;
 	}
-	return (i);
+	return ((i == 0) ? 1 : i);
 }
 
 char	*ft_ftoa(long double n, int tol, int count)
 {
-	char	*str;
-	char	t;
-	long double     tmp;
+	char		*str;
+	char		t;
+	long double	tmp;
 
 	tmp = n;
 	if (n < 0)
