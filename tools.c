@@ -15,7 +15,8 @@
 char 		*conditions(char *str, int end, char *res)
 {
 	if (ft_strchr(str, '+'))
-		if (ft_atoi(res) > 0 && str[end] == 'd')
+		if (ft_atoi(res) > 0 && str[end] != 's' && str[end] != 'c'
+		&& str[end] != '%')
 			res = ft_strjoin("+", res);
 	if (ft_strchr(str, '#'))
 	{
@@ -38,8 +39,12 @@ char		*make_weigth(char *str, int start, int end, char *res)
 	i[1] = end;
 	str1 = ft_strnew(1);
 	while (start++ != end)
-		if (str[start] > 48 && str[start] <= 57 && str[start - 1] != '.')
-			str1 = parse_char(str[start]);
+	{
+		if (str[start] == '0' && i[0] + 1 == start)
+			start++;
+		if (str[start] >= 48 && str[start] <= 57 && str[start - 1] != '.')
+			str1 = ft_strjoin(str1, parse_char(str[start]));
+	}
 	null = ft_strnew(ft_atoi(str1));
 	zero = ft_strnew(ft_atoi(str1));
 	start = 0;
@@ -61,7 +66,8 @@ char		*make_weigth(char *str, int start, int end, char *res)
 		res = ft_strjoin(null, res);
 	// 2 leaks
 	if (str_s(str, i[0], i[1], ' ') == 1 && str_s(str, i[0], i[1], '+') == 0)
-		if (ft_atoi(res) > 0 && str[end] == 'd')
+		if (ft_atoi(res) > 0 && str[end] != 'c' && str[end] != 's'
+		&& str[end] != '%')
 			res = ft_strjoin(" ", res);
 	// 1 leak
 	free(str1);
@@ -90,6 +96,9 @@ int		str_s(char *str, int start, int end, char c)
 		}
 		count++;
 	}
+	if (c == '0')
+		if (str[count - 1] != '%')
+			return (0);
 	free(ret);
 	return (1);
 }

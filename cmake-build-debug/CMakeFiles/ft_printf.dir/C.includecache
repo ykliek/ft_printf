@@ -19,6 +19,8 @@ stdarg.h
 -
 ./libft/libft.h
 /Users/ykliek/Desktop/ft_printf/./libft/libft.h
+string.h
+-
 
 /Users/ykliek/Desktop/ft_printf/tools.c
 printf.h

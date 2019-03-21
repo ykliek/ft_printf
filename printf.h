@@ -20,14 +20,21 @@
 # include <stdio.h> // delete before pushing
 # include <stdarg.h>
 # include "./libft/libft.h"
+#include <string.h>
 
-int			ft_printf(const char *format, ...);
+typedef struct 	retValue
+{
+	int a;
+	int b;
+}				s_retValue;
+
+int		ft_printf(const char *format, ...);
 
 char	*parse_char(char c);
 
 char	*address(long long int a);
 
-char	*ft_itoa_base(int value, int base, char type);
+char	*ft_itoa_base(long long int value, int base, char type);
 
 char 	*str_toupper(char *str);
 
@@ -35,15 +42,15 @@ char 	*precision(int	start, int end, char *str, char *str2);
 
 char	*precision_diouxX(int num, char *str);
 
-char		*find_type(char type, va_list argptr, int tol);
+char	*find_type(char type, va_list argptr, int tol);
 
 int		precision_f(int	start, int end, char *str);
 
 char	*ft_ftoa(long double n, int tol, int count);
 
-char        *modifiers(int start, int end, char *str, va_list argptr);
+char	*modifiers(int start, int end, char *str, va_list argptr);
 
-char       *make_weigth(char *str, int start, int end, char *res);
+char	*make_weigth(char *str, int start, int end, char *res);
 
 int		str_s(char *str, int start, int end, char c);
 

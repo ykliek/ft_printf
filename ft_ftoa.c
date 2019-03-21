@@ -54,5 +54,12 @@ char	*ft_ftoa(long double n, int tol, int count)
 		n *= 10;
 	}
 	str[count] = '\0';
+	if (n > 5 && n < 10)
+	{
+		count--;
+		while(str[count] == '9')
+			str[count--] = '0';
+		str[count] = str[count] + 1;
+	}
 	return (str);
 }

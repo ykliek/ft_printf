@@ -12,14 +12,15 @@
 
 #include "printf.h"
 
-int		print(int count, char *str, va_list argptr)
+s_retValue		print(int count, char *str, va_list argptr)
 {
 	char 	*str2;
 	int		tmp;
+	s_retValue ret;
 
 	tmp = count;
 	count++;
-	while (ft_strchr("cspfdiouxX", str[count]) == NULL)
+	while (ft_strchr("cspfdiouxX%", str[count]) == NULL)
 		count++;
 	if (str[count - 1] < 65 || str[count - 1] > 122)
 		str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
@@ -29,8 +30,10 @@ int		print(int count, char *str, va_list argptr)
 		str2 = precision(tmp, count, str, str2);
 	str2 = make_weigth(str, tmp, count, str2);
 	ft_putstr(str2);
+	ret.b = (int)ft_strlen(str2);
 	free(str2);
-	return (count - tmp);
+	ret.a = count - tmp;
+	return (ret);
 }
 
 char		*find_type(char type, va_list argptr, int tol)
@@ -44,7 +47,7 @@ char		*find_type(char type, va_list argptr, int tol)
 		str = ft_itoa(CHECKM(a) + a);
 	}
 	if (type == '%')
-		str = "%";
+		str = ft_strjoin(str, "%");
 	if (type == 'd' || type == 'i')
 		str = ft_itoa(va_arg(argptr, int));
 	if (type == 'c')
@@ -66,29 +69,32 @@ char		*find_type(char type, va_list argptr, int tol)
 
 int		ft_printf(const char *format, ...)
 {
-	int		count;
-	int		end;
-	va_list	argptr;
+	int			count;
+	int			end;
+	va_list		argptr;
+	int			ret;
+	s_retValue	num;
 
 	count = 0;
+	ret = 0;
 	va_start(argptr, format);
 	 while (format[count] != '\0')
 	 {
-	 	if (format[count + 1] == '%' && format[count] == '%')
-	 	{
-	 		ft_putchar('%');
-	 		count = count + 2;
-	 	}
 	 	if (format[count] != '%')
-	 		write(1, &format[count], 1);
+		{
+			write(1, &format[count], 1);
+			ret++;
+		}
 	 	if (format[count] == '%')
 	 	{
-	 		end = print(count, (char *)format, argptr);
+			num = print(count, (char *)format, argptr);
+	 		end = num.a;
+	 		ret = ret + num.b;
 	 		count += end;
 	 	}
 	 	count++;
 	 }
 	va_end(argptr);
-	return (count);
+	return (ret);
 }
 
