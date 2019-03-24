@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = gcc
-# 
+
 CFLSGS = -c -Wall -Wextra -Werror
 
 # CFLSGS = -Wall -Wextra -Werror

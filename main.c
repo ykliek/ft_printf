@@ -14,9 +14,9 @@
 
 int		main()
 {
-	printf("%d\n", ft_printf("%x\n", -42));
-	printf("%d\n", printf("%x\n", -42));
-//	printf("%%\n");
-//	printf("%s\n", ft_ftoa(25.482, 6, 0));
+	ft_printf("%#x", 0);
+	//	printf("%hhX", 4294967296);
+	//	printf("%%\n");
+	//	printf("%s\n", ft_ftoa(25.482, 6, 0));
 	return (0);
 }

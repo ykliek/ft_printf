@@ -12,13 +12,25 @@
 
 #include "printf.h"
 
+int		min(char *str, int end, char *res)
+{
+	if (ft_strchr(str, '#') && ft_atoi(res) != 0)
+	{
+		if (str[end] == 'x' || str[end] == 'X')
+			return (2);
+		if (str[end] == 'o')
+			return (1);
+	}
+	return (0);
+}
+
 char 		*conditions(char *str, int end, char *res)
 {
 	if (ft_strchr(str, '+'))
 		if (ft_atoi(res) > 0 && str[end] != 's' && str[end] != 'c'
 		&& str[end] != '%')
 			res = ft_strjoin("+", res);
-	if (ft_strchr(str, '#'))
+	if (ft_strchr(str, '#') && ft_atoi(res) != 0)
 	{
 		if (str[end] == 'x' || str[end] == 'X')
 			res = ft_strjoin(TEG(str, end), res);
@@ -48,13 +60,12 @@ char		*make_weigth(char *str, int start, int end, char *res)
 	null = ft_strnew(ft_atoi(str1));
 	zero = ft_strnew(ft_atoi(str1));
 	start = 0;
-	res = conditions(str, end, res);
 	if (str1 != NULL && ft_strlen(str1) != 0)
 	{
-		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str))
+		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str) - min(str, end, res))
 			null[start++] = ' ';
 		start = 0;
-		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str))
+		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str) - min(str,end, res))
 			zero[start++] = '0';
 	}
 	// 0
@@ -62,13 +73,14 @@ char		*make_weigth(char *str, int start, int end, char *res)
 		res = ft_strjoin(res, null);
 	else if (str_s(str, i[0], i[1], '0') == 1 && str_s(str, i[0], i[1], '.') == 0)
 		res = ft_strjoin(zero, res);
-	else
-		res = ft_strjoin(null, res);
 	// 2 leaks
+	res = conditions(str, end, res);
 	if (str_s(str, i[0], i[1], ' ') == 1 && str_s(str, i[0], i[1], '+') == 0)
 		if (ft_atoi(res) > 0 && str[end] != 'c' && str[end] != 's'
 		&& str[end] != '%')
 			res = ft_strjoin(" ", res);
+	if (str_s(str, i[0], i[1], '-') != 1 && str_s(str, i[0], i[1], '0') != 1)
+		res = ft_strjoin(null, res);
 	// 1 leak
 	free(str1);
 	free(null);
@@ -97,7 +109,7 @@ int		str_s(char *str, int start, int end, char c)
 		count++;
 	}
 	if (c == '0')
-		if (str[count - 1] != '%')
+		if (ft_strchr("-+ #%", str[count - 1]) == NULL)
 			return (0);
 	free(ret);
 	return (1);
