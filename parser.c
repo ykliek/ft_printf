@@ -36,10 +36,14 @@ char	*parse_char(char c)
 {
 	char *str;
 
-	str = ft_strnew(2);
-	str[0] = c;
-	str[1] = '\0';
-	return (str);
+	if (c)
+	{
+		str = ft_strnew(2);
+		str[0] = c;
+		str[1] = '\0';
+		return (str);
+	}
+	return (ft_strdup("^@"));
 }
 
 char 	*str_toupper(char *str)

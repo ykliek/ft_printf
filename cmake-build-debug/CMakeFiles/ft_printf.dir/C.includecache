@@ -12,7 +12,15 @@ unistd.h
 stdlib.h
 -
 
+/Users/ykliek/Desktop/ft_printf/ft_printf.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
 /Users/ykliek/Desktop/ft_printf/main.c
+printf.h
+/Users/ykliek/Desktop/ft_printf/printf.h
+
+/Users/ykliek/Desktop/ft_printf/parser.c
 printf.h
 /Users/ykliek/Desktop/ft_printf/printf.h
 

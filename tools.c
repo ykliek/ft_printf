@@ -27,7 +27,7 @@ int		min(char *str, int end, char *res)
 char 		*conditions(char *str, int end, char *res)
 {
 	if (ft_strchr(str, '+'))
-		if (ft_atoi(res) > 0 && str[end] != 's' && str[end] != 'c'
+		if (ft_atoi(res) >= 0 && str[end] != 's' && str[end] != 'c'
 		&& str[end] != '%')
 			res = ft_strjoin("+", res);
 	if (ft_strchr(str, '#') && ft_atoi(res) != 0)
@@ -50,22 +50,25 @@ char		*make_weigth(char *str, int start, int end, char *res)
 	i[0] = start;
 	i[1] = end;
 	str1 = ft_strnew(1);
-	while (start++ != end)
+	while (str[start] != '.')
 	{
+		if (start == end)
+			break ;
 		if (str[start] == '0' && i[0] + 1 == start)
 			start++;
-		if (str[start] >= 48 && str[start] <= 57 && str[start - 1] != '.')
+		if (str[start] >= 48 && str[start] <= 57)
 			str1 = ft_strjoin(str1, parse_char(str[start]));
+		start++;
 	}
 	null = ft_strnew(ft_atoi(str1));
 	zero = ft_strnew(ft_atoi(str1));
 	start = 0;
 	if (str1 != NULL && ft_strlen(str1) != 0)
 	{
-		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str) - min(str, end, res))
+		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str, i[0], i[1]) - min(str, end, res))
 			null[start++] = ' ';
 		start = 0;
-		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str) - min(str,end, res))
+		while (start < DIFF(ft_atoi(str1), (int)ft_strlen(res)) - TEST(str, i[0], i[1]) - min(str,end, res))
 			zero[start++] = '0';
 	}
 	// 0
@@ -73,8 +76,8 @@ char		*make_weigth(char *str, int start, int end, char *res)
 		res = ft_strjoin(res, null);
 	else if (str_s(str, i[0], i[1], '0') == 1 && str_s(str, i[0], i[1], '.') == 0)
 		res = ft_strjoin(zero, res);
-	// 2 leaks
 	res = conditions(str, end, res);
+	// 2 leaks
 	if (str_s(str, i[0], i[1], ' ') == 1 && str_s(str, i[0], i[1], '+') == 0)
 		if (ft_atoi(res) > 0 && str[end] != 'c' && str[end] != 's'
 		&& str[end] != '%')
@@ -108,9 +111,9 @@ int		str_s(char *str, int start, int end, char c)
 		}
 		count++;
 	}
-	if (c == '0')
-		if (ft_strchr("-+ #%", str[count - 1]) == NULL)
-			return (0);
+	// if (c == '0')
+	// 	if (ft_strchr("-+ #%", str[count - 1]) == NULL)
+	// 		return (0);
 	free(ret);
 	return (1);
 }

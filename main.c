@@ -14,9 +14,17 @@
 
 int		main()
 {
-	ft_printf("%#x", 0);
-	//	printf("%hhX", 4294967296);
-	//	printf("%%\n");
-	//	printf("%s\n", ft_ftoa(25.482, 6, 0));
+//	ft_printf("MY_11111: @moulitest: %#.x %#.0x\n", 0, 0);
+//	printf("PRINTF_1: @moulitest: %#.x %#.0x\n", 0, 0);
+//	ft_printf("MY_22222: @moulitest: %.x %.0x\n", 0, 0);
+//	printf("PRINTF_2: @moulitest: %.x %.0x\n", 0, 0);
+//	ft_printf("MY_33333: @moulitest: %5.x %5.0x\n", 0, 0);
+//	printf("PRINTF_3: @moulitest: %5.x %5.0x\n", 0, 0);
+//	ft_printf("\t\t^WTF^\n");
+//	ft_printf("\t===================\n");
+	ft_printf("MY_44444: %0+5d\n", 42);
+	printf("PRINTF_5: %0+5d\n", 42);
+	ft_printf("%05d\n", -42);
+	printf("%05d\n\n", -42);
 	return (0);
 }

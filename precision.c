@@ -19,6 +19,7 @@ char 	*precision(int	start, int end, char *str, char *str2)
 	int		tmp;
 
 	count = 0;
+	tmp = -1;
 	while (start <= end)
 	{
 		if (str[start - 1] == '.')
@@ -38,27 +39,39 @@ char 	*precision(int	start, int end, char *str, char *str2)
 		start++;
 	}
 	if (count != 0)
-	    return (precision_diouxX(ft_atoi(str1), str2));
-	return (precision_diouxX(0, str2));
+	    return (precision_diouxX(ft_atoi(str1), str2, str[end] ,tmp));
+	return (precision_diouxX(0, str2, str[end], tmp));
 }
 
-char	*precision_diouxX(int num, char *str)
+char	*precision_diouxX(int num, char *str, char c, int i)
 {
 	int		count;
 	int		count2;
 	char	*str1;
 
 	count2 = 0;
-	if ((int)ft_strlen(str) < num)
+	if (c == 's' && i != -1)
 	{
-		count = num - ft_strlen(str);
-		str1 = (char *)malloc(count + 1);
-		while (count2 != count)
-			str1[count2++] = '0';
+		str1 = (char *)malloc(num + 1);
+		while (count2 != num)
+		{
+			str1[count2] = str[count2];
+			count2++;
+		}
 		str1[count2] = '\0';
-		str1 = ft_strjoin(str1, str);
 		return (str1);
 	}
+	else
+		if ((int)ft_strlen(str) < num)
+		{
+			count = num - ft_strlen(str);
+			str1 = (char *) malloc(count + 1);
+			while (count2 != count)
+				str1[count2++] = '0';
+			str1[count2] = '\0';
+			str1 = ft_strjoin(str1, str);
+			return (str1);
+		}
 	return (str);
 }
 

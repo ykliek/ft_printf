@@ -40,6 +40,7 @@ char		*find_type(char type, va_list argptr, int tol)
 {
 	char	*str;
 	int 	a;
+
 	str = ft_strnew(1);
 	if (type == 'u')
 	{
@@ -62,6 +63,8 @@ char		*find_type(char type, va_list argptr, int tol)
 		str = ft_itoa_base(va_arg(argptr, int), 16, type);
 	if (type == 'f')
 		str = ft_ftoa(va_arg(argptr, double), tol, 0);
+	if (!str)
+		return (ft_strdup("(null)"));
 	return (str);
 }
 

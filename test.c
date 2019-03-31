@@ -29,7 +29,9 @@
 
 int main()
 {
-	printf("%s", "dqqw");
+	char *c;
+
+	ft_printf("%c", (char)0);
 	return (0);
 }
 

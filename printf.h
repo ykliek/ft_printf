@@ -13,7 +13,7 @@
 #ifndef PRINTF_H
 # define PRINTF_H
 # define DIFF(x, y) ((x > y) ? x - y : 0)
-# define TEST(str) ((ft_strchr(str, ' ') && !ft_strchr(str, '+')) ? 1 : 0)
+# define TEST(str, s, e) ((str_s(str, s, e, ' ') == 1 && str_s(str, s, e, '+')) != 1 ? 1 : 0)
 # define TEG(str, end) ((str[end] == 'x') ? "0x" : "0X")
 # define CHECKM(a) ((a < 0) ? 4294967296 : 0)
 
@@ -40,7 +40,7 @@ char 	*str_toupper(char *str);
 
 char 	*precision(int	start, int end, char *str, char *str2);
 
-char	*precision_diouxX(int num, char *str);
+char	*precision_diouxX(int num, char *str, char c, int i);
 
 char	*find_type(char type, va_list argptr, int tol);
 
