@@ -6,7 +6,7 @@
 #    By: ykliek <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/14 10:29:25 by ykliek            #+#    #+#              #
-#    Updated: 2019/01/14 10:29:28 by ykliek           ###   ########.fr        #
+#*   Updated: 2019/04/04 16:04:46 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ SRCS = main.c \
 		ft_ftoa.c \
 		precision.c \
 		modifiers.c \
-		tools.c
+		tools_v0.1.c
 
 OBJ = ft_printf.o \
 		parser.o \

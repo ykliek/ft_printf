@@ -6,7 +6,7 @@
 /*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 13:44:06 by ykliek            #+#    #+#             */
-/*   Updated: 2018/10/26 13:44:08 by ykliek           ###   ########.fr       */
+/*   Updated: 2019/04/04 15:22:19 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ size_t	ft_strlen(const char *s)
 	int count;
 
 	count = 0;
-	if (s)
-	{
-		while (s[count] != '\0')
-			count++;
-		return (count);
-	}
-	return (NULL);
+	while (s[count] != '\0')
+		count++;
+	return (count);
 }

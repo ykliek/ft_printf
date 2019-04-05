@@ -24,7 +24,7 @@ int		main()
 //	ft_printf("\t===================\n");
 	ft_printf("MY_44444: %0+5d\n", 42);
 	printf("PRINTF_5: %0+5d\n", 42);
-	ft_printf("%05d\n", -42);
-	printf("%05d\n\n", -42);
+	ft_printf("MY:%05d\n", -42);
+	printf("PR:%05d\n\n", -42);
 	return (0);
 }

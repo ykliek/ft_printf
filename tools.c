@@ -48,7 +48,7 @@ char		*make_weigth(char *str, int start, int end, char *res)
 	int 	i[2];
 
 	i[0] = start;
-	i[1] = end;
+		i[1] = end;
 	str1 = ft_strnew(1);
 	while (str[start] != '.')
 	{

@@ -54,4 +54,10 @@ char	*make_weigth(char *str, int start, int end, char *res);
 
 int		str_s(char *str, int start, int end, char c);
 
+// test
+
+// char	*make_flags(char *str, int start, int end, char *res);
+
+// not test
+
 #endif

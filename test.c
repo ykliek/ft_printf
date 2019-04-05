@@ -31,7 +31,7 @@ int main()
 {
 	char *c;
 
-	ft_printf("%c", (char)0);
+	printf("%s\n", make_flags("%-+ 05.65d", 0, 8, "123"));
 	return (0);
 }
 
