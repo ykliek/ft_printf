@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                  FILE NAME: tools_v0.1.c                                   */
-/*                                                                            */
-/*   By: yura     <HOME: www.yura.klek@gmail.com>                             */
-/*                <WORK: www.Yurii.Kiek@aimarketing.info>                     */
-/*                                                                            */
-/*   Created: 2019/04/04 15:23:09 by yura                                     */
-/*   Updated: 2019/04/04 15:26:01 by                                          */
+/*                                                        :::      ::::::::   */
+/*   tools_v0.1.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykliek <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/09 18:19:03 by ykliek            #+#    #+#             */
+/*   Updated: 2019/04/09 18:19:05 by ykliek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		find_width(char *str, int start, int end, char *res)
 {
 	int		i;
 	char	*ret;
+	int		num;
 
 	i = 0;
 	ret = ft_strnew(1);
@@ -33,7 +34,8 @@ int		find_width(char *str, int start, int end, char *res)
 			break ;
 		start++;
 	}
-	return (ft_atoi(ret) - ft_strlen(res));
+	num = ft_atoi(ret) - ft_strlen(res);
+	return ((num < 0) ? 0 : num);
 }
 
 int		flags(char *str, int start, int end, char c)
@@ -73,21 +75,19 @@ char		*make_weigth(char *str, int start, int end, char *res)
 	}
 	if (flags(str, start, end, '+'))
 		if (ft_atoi(res) >= 0 && str[end] != 's' && str[end] != 'c'
-		&& str[end] != '%')
+			&& str[end] != '%')
 			res = ft_strjoin("+", res);
 	if (flags(str, start, end, ' ') == 1 && flags(str, start, end, '+') == 0)
 		if (ft_atoi(res) > 0 && str[end] != 'c' && str[end] != 's'
-		&& str[end] != '%')
+			&& str[end] != '%')
 			res = ft_strjoin(" ", res);
 	if (flags(str, start, end, '-') != 1 && flags(str, start, end, '0') != 1)
 		res = ft_strjoin(make_str(' ', find_width(str, start, end, res)), res);
+	if (flags(str, start, end, '-') == 1 && flags(str, start, end, '0') != 1)
+		res = ft_strjoin(res, make_str(' ', find_width(str, start, end, res)));
 	if (flags(str, start, end, '0') == 1 && flags(str, start, end, '-') == 0)
-	{
-		if (ft_strchr(ft_strsub(str, start, end), '.') != NULL 
-			&& ft_strchr("dioxX", str[end]) != NULL)
-
-		else
-			res = ft_strjoin(make_str('0', find_width(str, start, end, res)), res);
-	}
+		if (ft_strchr(ft_strsub(str, start, end), '.') == NULL
+			&& ft_strchr("dioxX", str[end]) == NULL)
+			res = str_join_n(make_str('0', find_width(str, start, end, res)), res);
 	return (res);
 }

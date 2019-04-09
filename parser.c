@@ -60,3 +60,29 @@ char 	*str_toupper(char *str)
 	return (str);
 }
 
+char	*str_join_n(char *s1, char *s2)
+{
+	char	*str;
+	int		count;
+	int		count_1;
+
+	count = 0;
+	count_1 = 0;
+	if (s1 && s2)
+	{
+		str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+		if (!str)
+			return (NULL);
+		if (s2[0] == '-' || s2[0] == '+')
+			str[count_1] = (s2[0] == '-') ? '-' : '+';
+		count_1++;
+		while (s1[count] != '\0')
+			str[count_1++] = s1[count++];
+		count = (s2[0] == '-' || s2[0] == '+') ? 1 : 0;
+		while (s2[count] != '\0')
+			str[count_1++] = s2[count++];
+		str[count_1] = '\0';
+		return (str);
+	}
+	return (NULL);
+}

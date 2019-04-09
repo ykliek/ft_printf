@@ -1,3 +1,3 @@
-/home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles/ft_printf.dir
-/home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles/ft_printf.dir

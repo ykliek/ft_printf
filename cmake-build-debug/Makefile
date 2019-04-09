@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/61/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yura/Desktop/ft_printf_make
+CMAKE_SOURCE_DIR = /Users/ykliek/Desktop/ft_printf_new
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yura/Desktop/ft_printf_make/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ykliek/Desktop/ft_printf_new/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/yura/Desktop/ft_printf_make/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/61/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/61/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles /home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles /Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yura/Desktop/ft_printf_make/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ykliek/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1878,32 +1878,32 @@ precision.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/precision.c.s
 .PHONY : precision.c.s
 
-tools.o: tools.c.o
+tools_v0.1.o: tools_v0.1.c.o
 
-.PHONY : tools.o
+.PHONY : tools_v0.1.o
 
 # target to build an object file
-tools.c.o:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools.c.o
-.PHONY : tools.c.o
+tools_v0.1.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools_v0.1.c.o
+.PHONY : tools_v0.1.c.o
 
-tools.i: tools.c.i
+tools_v0.1.i: tools_v0.1.c.i
 
-.PHONY : tools.i
+.PHONY : tools_v0.1.i
 
 # target to preprocess a source file
-tools.c.i:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools.c.i
-.PHONY : tools.c.i
+tools_v0.1.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools_v0.1.c.i
+.PHONY : tools_v0.1.c.i
 
-tools.s: tools.c.s
+tools_v0.1.s: tools_v0.1.c.s
 
-.PHONY : tools.s
+.PHONY : tools_v0.1.s
 
 # target to generate assembly for a file
-tools.c.s:
-	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools.c.s
-.PHONY : tools.c.s
+tools_v0.1.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tools_v0.1.c.s
+.PHONY : tools_v0.1.c.s
 
 # Help Target
 help:
@@ -1912,8 +1912,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... ft_printf"
 	@echo "... edit_cache"
+	@echo "... ft_printf"
 	@echo "... ft_ftoa.o"
 	@echo "... ft_ftoa.i"
 	@echo "... ft_ftoa.s"
@@ -2109,9 +2109,9 @@ help:
 	@echo "... precision.o"
 	@echo "... precision.i"
 	@echo "... precision.s"
-	@echo "... tools.o"
-	@echo "... tools.i"
-	@echo "... tools.s"
+	@echo "... tools_v0.1.o"
+	@echo "... tools_v0.1.i"
+	@echo "... tools_v0.1.s"
 .PHONY : help
 
 

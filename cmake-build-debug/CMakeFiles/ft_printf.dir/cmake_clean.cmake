@@ -64,7 +64,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/modifiers.c.o"
   "CMakeFiles/ft_printf.dir/parser.c.o"
   "CMakeFiles/ft_printf.dir/precision.c.o"
-  "CMakeFiles/ft_printf.dir/tools.c.o"
+  "CMakeFiles/ft_printf.dir/tools_v0.1.c.o"
   "ft_printf.pdb"
   "ft_printf"
 )

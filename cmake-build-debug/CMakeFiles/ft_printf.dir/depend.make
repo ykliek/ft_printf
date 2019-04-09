@@ -203,7 +203,7 @@ CMakeFiles/ft_printf.dir/precision.c.o: .././libft/libft.h
 CMakeFiles/ft_printf.dir/precision.c.o: ../precision.c
 CMakeFiles/ft_printf.dir/precision.c.o: ../printf.h
 
-CMakeFiles/ft_printf.dir/tools.c.o: .././libft/libft.h
-CMakeFiles/ft_printf.dir/tools.c.o: ../printf.h
-CMakeFiles/ft_printf.dir/tools.c.o: ../tools.c
+CMakeFiles/ft_printf.dir/tools_v0.1.c.o: .././libft/libft.h
+CMakeFiles/ft_printf.dir/tools_v0.1.c.o: ../printf.h
+CMakeFiles/ft_printf.dir/tools_v0.1.c.o: ../tools_v0.1.c
 

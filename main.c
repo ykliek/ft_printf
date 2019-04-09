@@ -22,9 +22,6 @@ int		main()
 //	printf("PRINTF_3: @moulitest: %5.x %5.0x\n", 0, 0);
 //	ft_printf("\t\t^WTF^\n");
 //	ft_printf("\t===================\n");
-	ft_printf("MY_44444: %0+5d\n", 42);
-	printf("PRINTF_5: %0+5d\n", 42);
-	ft_printf("MY:%05d\n", -42);
-	printf("PR:%05d\n\n", -42);
+	ft_printf("%010x", 542);
 	return (0);
 }
