@@ -34,7 +34,11 @@ int		find_width(char *str, int start, int end, char *res)
 			break ;
 		start++;
 	}
-	num = ft_atoi(ret) - ft_strlen(res);
+	if (str[end] == 'c' && ft_strchr(res, '^') && ft_strchr(res, '@'))
+		i = ft_strlen(res) - 1;
+	else
+		i = ft_strlen(res);
+	num = ft_atoi(ret) - i;
 	return ((num < 0) ? 0 : num);
 }
 
@@ -66,14 +70,18 @@ char 	*make_str(char c, int length)
 
 char		*make_weigth(char *str, int start, int end, char *res)
 {
-	if (flags(str, start, end, '#') && ft_atoi(res) != 0)
+	int		i;
+
+	i = 0;
+	if (flags(str, start, end, '#') == 1 && ft_strchr("xXo", str[end]) && res[0] != '0')
 	{
 		if (str[end] == 'x' || str[end] == 'X')
-			res = ft_strjoin(TEG(str, end), res);
+			if (ft_strlen(res) > 0)
+				res = ft_strjoin(TEG(str, end), res);
 		if (str[end] == 'o')
 			res = ft_strjoin("0", res);
 	}
-	if (flags(str, start, end, '+'))
+	if (flags(str, start, end, '+') == 1)
 		if (ft_atoi(res) >= 0 && str[end] != 's' && str[end] != 'c'
 			&& str[end] != '%')
 			res = ft_strjoin("+", res);
@@ -81,13 +89,20 @@ char		*make_weigth(char *str, int start, int end, char *res)
 		if (ft_atoi(res) > 0 && str[end] != 'c' && str[end] != 's'
 			&& str[end] != '%')
 			res = ft_strjoin(" ", res);
-	if (flags(str, start, end, '-') != 1 && flags(str, start, end, '0') != 1)
-		res = ft_strjoin(make_str(' ', find_width(str, start, end, res)), res);
-	if (flags(str, start, end, '-') == 1 && flags(str, start, end, '0') != 1)
+	if (flags(str, start, end, '-') == 1)
 		res = ft_strjoin(res, make_str(' ', find_width(str, start, end, res)));
 	if (flags(str, start, end, '0') == 1 && flags(str, start, end, '-') == 0)
-		if (ft_strchr(ft_strsub(str, start, end), '.') == NULL
-			&& ft_strchr("dioxX", str[end]) == NULL)
+	{
+		if (ft_strchr(ft_strsub(str, start, end), '.') != NULL
+			&& ft_strchr("dioxX", str[end]) != NULL)
+			i = 0;
+		else
+		{
+			i = 1;
 			res = str_join_n(make_str('0', find_width(str, start, end, res)), res);
+		}
+	}
+	if (flags(str, start, end, '-') != 1 && i != 1)
+		res = ft_strjoin(make_str(' ', find_width(str, start, end, res)), res);
 	return (res);
 }

@@ -60,27 +60,42 @@ char 	*str_toupper(char *str)
 	return (str);
 }
 
+int		f_count(char *s2)
+{
+	int		count;
+	int		i;
+
+	i = 0;
+	count = 0;
+	if (s2[0] == '-' || s2[0] == '+')
+		count = 1;
+	if ((s2[0] == '0' && s2[1] == 'x') || (s2[0] == '0' && s2[1] == 'X'))
+		count = 2;
+	else if (s2[0] == '0')
+		count = 1;
+	return (count);
+}
+
 char	*str_join_n(char *s1, char *s2)
 {
 	char	*str;
 	int		count;
 	int		count_1;
+	int		i;
 
+	i = 0;
 	count = 0;
 	count_1 = 0;
 	if (s1 && s2)
 	{
-		str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-		if (!str)
-			return (NULL);
-		if (s2[0] == '-' || s2[0] == '+')
-			str[count_1] = (s2[0] == '-') ? '-' : '+';
-		count_1++;
-		while (s1[count] != '\0')
-			str[count_1++] = s1[count++];
-		count = (s2[0] == '-' || s2[0] == '+') ? 1 : 0;
-		while (s2[count] != '\0')
+		str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+		while (count_1 < ((int)ft_strlen(s1) + (int)ft_strlen(s2)))
+		{
+			if (count_1 == f_count(s2))
+				while (s1[i] != '\0')
+					str[count_1++] = s1[i++];
 			str[count_1++] = s2[count++];
+		}
 		str[count_1] = '\0';
 		return (str);
 	}

@@ -12,7 +12,7 @@ unistd.h
 stdlib.h
 -
 
-/Users/ykliek/Desktop/ft_printf_new/main.c
+/Users/ykliek/Desktop/ft_printf_new/ft_printf.c
 printf.h
 /Users/ykliek/Desktop/ft_printf_new/printf.h
 
@@ -25,8 +25,4 @@ stdarg.h
 /Users/ykliek/Desktop/ft_printf_new/./libft/libft.h
 string.h
 -
-
-/Users/ykliek/Desktop/ft_printf_new/tools_v0.1.c
-printf.h
-/Users/ykliek/Desktop/ft_printf_new/printf.h
 

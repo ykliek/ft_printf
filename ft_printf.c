@@ -21,7 +21,18 @@ s_retValue		print(int count, char *str, va_list argptr)
 	tmp = count;
 	count++;
 	while (ft_strchr("cspfdiouxX%", str[count]) == NULL)
-		count++;
+	{
+		if (ft_strchr("%-+ #0hhh.lll123456789", str[count]))
+			count++;
+		else 
+			break;
+	}
+	if (ft_strchr("cspfdiouxX%", str[count]) == NULL || str[count] == '\0')
+	{
+		ret.a = count - tmp - 1;
+		ret.b = 0;
+		return (ret);
+	}
 	if (str[count - 1] < 65 || str[count - 1] > 122)
 		str2 = find_type(str[count], argptr, precision_f(tmp, count, str));
 	else
@@ -31,6 +42,8 @@ s_retValue		print(int count, char *str, va_list argptr)
 	str2 = make_weigth(str, tmp, count, str2);
 	ft_putstr(str2);
 	ret.b = (int)ft_strlen(str2);
+	if (str[count] == 'c' && ft_strchr(str2, '^') && ft_strchr(str2, '@'))
+		ret.b -= 1;
 	free(str2);
 	ret.a = count - tmp;
 	return (ret);
@@ -39,14 +52,10 @@ s_retValue		print(int count, char *str, va_list argptr)
 char		*find_type(char type, va_list argptr, int tol)
 {
 	char	*str;
-	int 	a;
 
 	str = ft_strnew(1);
 	if (type == 'u')
-	{
-		a = va_arg(argptr, unsigned int);
-		str = ft_itoa(CHECKM(a) + a);
-	}
+		str = ft_itoa((unsigned int)va_arg(argptr, unsigned int));
 	if (type == '%')
 		str = ft_strjoin(str, "%");
 	if (type == 'd' || type == 'i')
@@ -81,7 +90,7 @@ int		ft_printf(const char *format, ...)
 	count = 0;
 	ret = 0;
 	va_start(argptr, format);
-	 while (format[count] != '\0')
+	 while (count < (int)ft_strlen(format))
 	 {
 	 	if (format[count] != '%')
 		{

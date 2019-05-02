@@ -181,5 +181,8 @@ fclean: clean
 
 re: fclean all
 
+ef:
+	$(CC) $(SRCS_1) $(HEADER) $(LIB)
+
 ev:
 	$(CC) $(SRCS_1) $(HEADER) $(LIB) ; clear ; ./a.out | cat -e
