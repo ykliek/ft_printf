@@ -53,11 +53,10 @@ char		*find_type(char type, va_list argptr, int tol)
 {
 	char	*str;
 
-	str = ft_strnew(1);
 	if (type == 'u')
 		str = ft_itoa((unsigned int)va_arg(argptr, unsigned int));
 	if (type == '%')
-		str = ft_strjoin(str, "%");
+		str = ft_strdup("%");
 	if (type == 'd' || type == 'i')
 		str = ft_itoa(va_arg(argptr, int));
 	if (type == 'c')
